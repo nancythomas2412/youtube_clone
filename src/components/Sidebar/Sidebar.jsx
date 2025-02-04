@@ -15,49 +15,100 @@ import tom from "../../assets/tom.png";
 import megan from "../../assets/megan.png";
 import cameron from "../../assets/cameron.png";
 
-const Sidebar = ({sidebar}) => {
-  return <div className={`sidebar ${sidebar ? '' : "small-sidebar"}`}>
-    <div className="shortcut-links">
-      <div className="side-link">
-        <img src={home} alt="home image" /><p>Home</p>
+const Sidebar = ({ sidebar, category, setCategory }) => {
+  return (
+    <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
+      <div className="shortcut-links">
+        <div
+          className={`side-link ${category === 0 ? "active" : ""}`}
+          onClick={() => setCategory(0)}
+        >
+          <img src={home} alt="home image" />
+          <p>Home</p>
+        </div>
+        <div
+          className={`side-link ${category === 20 ? "active" : ""}`}
+          onClick={() => setCategory(20)}
+        >
+          <img src={game_icon} alt="image" />
+          <p>Gaming</p>
+        </div>
+        <div
+          className={`side-link ${category === 2 ? "active" : ""}`}
+          onClick={() => setCategory(2)}
+        >
+          <img src={automobiles} alt="image" />
+          <p>Automobiles</p>
+        </div>
+        <div
+          className={`side-link ${category === 17 ? "active" : ""}`}
+          onClick={() => setCategory(17)}
+        >
+          <img src={sports} alt="image" />
+          <p>Sports</p>
+        </div>
+        <div
+          className={`side-link ${category === 24 ? "active" : ""}`}
+          onClick={() => setCategory(24)}
+        >
+          <img src={entertainment} alt="image" />
+          <p>Entertainment</p>
+        </div>
+        <div
+          className={`side-link ${category === 28 ? "active" : ""}`}
+          onClick={() => setCategory(28)}
+        >
+          <img src={tech} alt="image" />
+          <p>Technology</p>
+        </div>
+        <div
+          className={`side-link ${category === 10 ? "active" : ""}`}
+          onClick={() => setCategory(10)}
+        >
+          <img src={music} alt="image" />
+          <p>Music</p>
+        </div>
+        <div
+          className={`side-link ${category === 22 ? "active" : ""}`}
+          onClick={() => setCategory(22)}
+        >
+          <img src={blogs} alt="image" />
+          <p>Blogs</p>
+        </div>
+        <div
+          className={`side-link ${category === 25 ? "active" : ""}`}
+          onClick={() => setCategory(25)}
+        >
+          <img src={news} alt="image" />
+          <p>News</p>
+        </div>
+        <hr />
       </div>
-      <div className="side-link">
-        <img src={game_icon} alt="home image" /><p>Gaming</p>
-      </div><div className="side-link">
-        <img src={automobiles} alt="home image" /><p>Automobiles</p>
-      </div><div className="side-link">
-        <img src={sports} alt="home image" /><p>Sports</p>
-      </div><div className="side-link">
-        <img src={entertainment} alt="home image" /><p>Entertainment</p>
-      </div><div className="side-link">
-        <img src={tech} alt="home image" /><p>Technology</p>
-      </div><div className="side-link">
-        <img src={music} alt="home image" /><p>Music</p>
-      </div><div className="side-link">
-        <img src={blogs} alt="home image" /><p>Blogs</p>
-      </div><div className="side-link">
-        <img src={news} alt="home image" /><p>News</p>
+      <div className="subscribed-list">
+        <h3>Subscribed</h3>
+        <div className="side-link">
+          <img src={jack} alt="jack image" />
+          <p>PewDiePie</p>
+        </div>
+        <div className="side-link">
+          <img src={simon} alt="simon image" />
+          <p>MrBeast</p>
+        </div>
+        <div className="side-link">
+          <img src={tom} alt="tom image" />
+          <p>Justin Beiber</p>
+        </div>
+        <div className="side-link">
+          <img src={megan} alt="megan image" />
+          <p>5-Minute Craft</p>
+        </div>
+        <div className="side-link">
+          <img src={cameron} alt="cameron image" />
+          <p>Nas Daily</p>
+        </div>
       </div>
-      <hr />
     </div>
-    <div className="subscribed-list">
-      <h3>Subscribed</h3>
-      <div className="side-link">
-        <img src={jack} alt="jack image" /><p>PewDiePie</p>
-      </div>
-      <div className="side-link">
-        <img src={simon} alt="simon image" /><p>MrBeast</p>
-      </div><div className="side-link">
-        <img src={tom} alt="tom image" /><p>Justin Beiber</p>
-      </div>
-      <div className="side-link">
-        <img src={megan} alt="megan image" /><p>5-Minute Craft</p>
-      </div>
-      <div className="side-link">
-        <img src={cameron} alt="cameron image" /><p>Nas Daily</p>
-      </div>
-    </div>
-  </div>;
+  );
 };
 
 export default Sidebar;
